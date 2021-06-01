@@ -15,7 +15,11 @@ export default class Btn {
 
   onClick() {
     if (!this.poped) {
-      const pop = createPop(this.element.dataset.title, this.element.dataset.content);
+      const pop = createPop(
+        this.element.dataset.title,
+        this.element.dataset.content,
+        this.element.dataset.id,
+      );
       document.body.appendChild(pop);
       const { top, left } = this.element.getBoundingClientRect();
       pop.style.width = `${this.element.offsetWidth}px`;
@@ -23,7 +27,7 @@ export default class Btn {
       pop.style.left = `${window.scrollX + left}px`;
       this.poped = true;
     } else if (this.poped) {
-      document.querySelector('.popover-container').classList.toggle('invalid');
+      document.getElementById(this.element.dataset.id).classList.toggle('invalid');
     }
   }
 }

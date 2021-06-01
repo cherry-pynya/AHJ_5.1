@@ -1,16 +1,14 @@
 body {
-    display: flex;
-    height: 2000px;
-    width: 800px;
+
 }
 
 .btn {
-    margin: 150px auto;
-    width: 160px;
+    position: relative;
+    margin: 150px 0;
+    width: 180px;
     height: 40px;
     background-color: chocolate;
     border: none;
-    position: relative;
 }
 
 .popover-container {
